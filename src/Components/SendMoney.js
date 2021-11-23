@@ -17,11 +17,7 @@ function SendMoney(props) {
     const [trigger_ins, setTTrigger_ins] = useState(false)
 
     const addData = () => {
-        // const receiverAmt = parseInt(amount) + amtPresent;
-        // const dataReciever = doc(db, `users/VUmZK1OefsDUwzfi0MFE/allUsers`, document_receiver)
-        // updateDoc(dataReciever, { total: receiverAmt })
-
-
+        
         if (props.senderAmt < parseInt(amount)) {
             setTTrigger_ins(true)
         }
@@ -34,6 +30,8 @@ function SendMoney(props) {
             updateDoc(dataReciever, { total: receiverAmt })
             setTrigger_suc(true)
         }
+        // console.log(props.rDetails)
+
 
     }
 
@@ -60,7 +58,11 @@ function SendMoney(props) {
                 </div>
             </div>
 
-            <SuccessPage trigger_success={trigger_suc} setSuccessPop={setTrigger_suc}>
+            <SuccessPage 
+            trigger_success={trigger_suc} 
+            setSuccessPop={setTrigger_suc} 
+            rDetails={props.rDetails}
+            sAmount={amount}>
 
             </SuccessPage>
             <InsufficientPage trigger_insufficient={trigger_ins} setInsufPop={setTTrigger_ins} >

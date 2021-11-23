@@ -11,19 +11,22 @@ function ReceiversList(props) {
     const [trigger_2, setTrigger_2] = useState(false)
     const [money, setMoney] = useState(0)
     const [key, setKey] = useState("")
+    const [receiverDetails, setReceiverDetails] = useState({})
 
-    const parameters=(totalTransfered,key)=>{
+    const parameters = (totalTransfered, key, receiverDetails) => {
         console.log(totalTransfered)
         console.log(key)
-        
+        console.log(receiverDetails)
+
+
     }
     useEffect(() => {
         onSnapshot(collection(db, `users/VUmZK1OefsDUwzfi0MFE/allUsers`), (snapshot) => {
             setBankUsers(snapshot.docs.map((doc) => doc.data()))
         })
-        parameters(money,key)
+        parameters(money, key, receiverDetails)
 
-    },[money,key])
+    }, [money, key])
 
     return (props.trigger) ? (
         <div className="recievers">
@@ -62,7 +65,9 @@ function ReceiversList(props) {
                                                 setTrigger_2(true)
                                                 setMoney(bUser.total)
                                                 setKey(bUser.key)
-                                                console.log(bUser)
+                                                setReceiverDetails(bUser)
+                                                console.log(receiverDetails)
+                                                // console.log(bUser)
                                             }}>Select</button></Link></td>
                                         </tr>
                                     </>
@@ -73,8 +78,15 @@ function ReceiversList(props) {
                 </div>
 
             </div>
-            <SendMoney trigger_2={trigger_2} setSecondPop={setTrigger_2} totalMoney={money} keyUser={`${key}`} senderKey={props.senderKey} senderAmt={props.senderAmt} >
-                {/* <h3>My popup</h3> */}
+            <SendMoney
+                trigger_2={trigger_2}
+                setSecondPop={setTrigger_2}
+                totalMoney={money} keyUser={`${key}`}
+                senderKey={props.senderKey}
+                senderAmt={props.senderAmt}
+                rDetails={receiverDetails}
+            >
+
             </SendMoney>
         </div>
     ) : "";

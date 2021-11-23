@@ -9,7 +9,9 @@ function InsufficientPage(props) {
                     <button onClick={() => {
                         props.setInsufPop(false)
                     }} id="insufficientFund">X</button></div>
-                <div className="text_insufficient"><h1>Insufficient Funds in your account !</h1></div>
+                <div className="text_insufficient">
+                    <h1><span>Insufficient Funds</span> in your account !</h1>
+                    </div>
             </div>
         </div>
     ) : "";

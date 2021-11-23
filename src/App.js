@@ -56,7 +56,7 @@ function App() {
                           <td>{bUser.phone}</td>
                           <td>Rs.{bUser.total}</td>
                         <td><Link to='/profilePage' ><button onClick={() => {
-                            setCustName({ name: bUser.name, email: bUser.email, phone: bUser.phone,total:bUser.total,key:bUser.key })
+                            setCustName({ name: bUser.name, email: bUser.email, phone: bUser.phone,total:bUser.total,key:bUser.key,photoID:bUser.photoId })
                           }}>Select</button></Link></td>
                         </tr>
                       </>

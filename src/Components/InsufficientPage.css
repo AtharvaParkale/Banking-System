@@ -31,6 +31,10 @@
     width: 100%;
     /* border: 2px solid; */
     height: 80%;
+    font-size: 21px;
+}
+.text_insufficient span{
+    color: red;
 }
 .cross_insufficient{
     display: flex;

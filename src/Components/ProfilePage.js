@@ -5,6 +5,9 @@ import { Link } from 'react-router-dom'
 import ReceiversList from './ReceiversList'
 import profile_picture from './profile_picture.jpg';
 
+import { getStorage, ref, getMetadata } from "firebase/storage";
+const storage = getStorage();
+const forestRef = ref(storage, 'userProfilePhotos/1mUkol.jpg');
 
 function ProfilePage({ pDetails }) {
 
@@ -14,15 +17,25 @@ function ProfilePage({ pDetails }) {
     useEffect(() => {
         console.log("This is sender key :")
         console.log(senderKey)
-    }, [])
 
+        getMetadata(forestRef)
+        .then((metadata) => {
+          // Metadata now contains the metadata for 'images/forest.jpg'
+          console.log(metadata.bucket)
+        })
+        .catch((error) => {
+          // Uh-oh, an error occurred!
+        });
+    }, [])
+    
     return (
         <>
             <div className="main">
                 <div className="profile_details">
                     <div className="box profile_pic">
                         <div className="image_holder">
-                            <img src={profile_picture} alt="Logo" />
+                            {/* <img src={profile_picture} alt="Logo" /> */}
+                            <img src={pDetails.photoID} alt="Logo" />
                         </div>
                     </div>
 
@@ -52,7 +65,7 @@ function ProfilePage({ pDetails }) {
                     </div>
 
                 </div>
-                <ReceiversList trigger={popUp} setTrigger={setPopUp} senderKey={senderKey} senderAmt={senderAmt}>
+                <ReceiversList trigger={popUp} setTrigger={setPopUp} senderKey={senderKey} senderAmt={senderAmt} >
                     <h3>My popup</h3>
                 </ReceiversList>
 
