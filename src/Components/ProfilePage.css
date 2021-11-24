@@ -7,7 +7,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid black;
+    /* border: 2px solid black; */
     width: 100vw;
     height: 100vh;
 }
@@ -107,6 +107,7 @@
     font-weight: 600;
     color: white;
     background-color: green;
+
 }
 #backButton{
     background-color: #e72525;
@@ -119,6 +120,40 @@ button:hover{
     width:100%;
     height:100%;
     object-fit:cover;
+}
+
+@media (max-width: 768px) {
+    .profile_details{
+        width: 95%;
+        border-radius: 10px;
+        box-shadow:0 4px 8px 0 rgb(0 0 0 / 50%);
+    }
+    .image_holder{
+        width: 40vw;
+        height: 25vh;
+    }
+    .profile_contact{
+        flex-direction: column;
+        
+    }
+    .profile_contact{
+        font-size: 16px;
+    }
+    .profile_contact span{
+        font-size: 16px;
+        
+    }
+    .profile_balance{
+        font-size: 21px;
+    }
+    .profile_details button{
+        width: 82px;
+        height: 32px;
+    }
+    .profile_email{
+        margin: 0;
+    }
+
 }
 
 

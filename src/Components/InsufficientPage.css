@@ -58,3 +58,15 @@
 #insufficientFund{
     background-color: #e72525;
 }
+
+@media (max-width: 768px) {
+   .insufficient_popup{
+       border-radius: 20px;
+       width: 83%;
+   }
+   .text_insufficient h1{
+       text-align: center;
+       font-size: 38px;
+   }
+   
+}

@@ -84,3 +84,22 @@
     margin-right: 2vw;
     border-radius: 10px;
 }
+
+@media (max-width: 768px) {
+  .sendMoney_popup{
+      width: 72%;
+      border-radius: 20px;
+  }
+  .sendMoney_text{
+      text-align: center;
+  }
+  .sendmoney_input input{
+      width: 220px;
+      font-size:15px ;
+  }
+  .sendmoney_input button{
+      font-size: 11px;
+      border-radius: 5px;
+  }
+
+}

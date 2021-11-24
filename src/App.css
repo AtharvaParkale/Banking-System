@@ -1,5 +1,5 @@
 .table_holder{
-    margin-top: 5vhvh;
+    margin-top: 5vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -11,14 +11,11 @@
 .table_holder h1{
     margin-bottom: 4vh;
 }
-/* table{
-   
-} */
 #bankkUsers {
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     font-size: 24px;
-    /* width: 100%; */
+    
 }
 #bankUsers th {
     padding-top: 12px;
@@ -49,4 +46,33 @@
 #bankUsers button:hover{
     padding-left: 4vh;
     padding-right: 4vh;
+}
+table{
+    border: none;
+}
+
+@media (max-width: 768px) {
+    #bankUsers th{
+        font-size: 11px;
+    }
+    #bankUsers td{
+        font-size: 10px;
+        padding: 0px;
+    }
+    #bankUsers button {
+        font-size: 8px;
+        border-radius: 3px;
+        padding: none;
+        width: 41px;
+        height: 23px;
+    }
+    table{
+        height: 82vh;
+        border: none;
+        margin: 4vh;
+    }
+    .table_holder h1{
+        font-size: 23px;
+        margin-top: 5vh;
+    }
 }

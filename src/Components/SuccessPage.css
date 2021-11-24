@@ -25,12 +25,10 @@
 }
 
 .text_success{
-    color: green;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    /* border: 2px solid; */
     height: 80%;
     flex-direction: column;
 }
@@ -69,3 +67,18 @@
 #cross_succ{
     background-color: #e72525;
 }
+
+@media (max-width: 768px) {
+   .success_popup{
+       width: 86%;
+       border-radius: 20px;
+   }
+   .text_success h1{
+       font-size: 33px;
+   }
+   .text_success h2{
+       text-align: center;
+       font-size: 27px;
+   }
+  
+  }
