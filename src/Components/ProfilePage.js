@@ -65,7 +65,12 @@ function ProfilePage({ pDetails }) {
                     </div>
 
                 </div>
-                <ReceiversList trigger={popUp} setTrigger={setPopUp} senderKey={senderKey} senderAmt={senderAmt} >
+                <ReceiversList 
+                trigger={popUp} 
+                setTrigger={setPopUp} 
+                senderKey={senderKey} 
+                senderAmt={senderAmt} 
+                sDetails={ pDetails }>
                     <h3>My popup</h3>
                 </ReceiversList>
 

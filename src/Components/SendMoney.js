@@ -62,7 +62,8 @@ function SendMoney(props) {
             trigger_success={trigger_suc} 
             setSuccessPop={setTrigger_suc} 
             rDetails={props.rDetails}
-            sAmount={amount}>
+            sAmount={amount}
+            sDetails={props.sDetails}>
 
             </SuccessPage>
             <InsufficientPage trigger_insufficient={trigger_ins} setInsufPop={setTTrigger_ins} >

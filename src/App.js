@@ -1,9 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import ProfilePage from './Components/ProfilePage';
+import TransactionPage from './Components/TransactionPage';
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { onSnapshot, collection} from "@firebase/firestore";
+import { onSnapshot, collection } from "@firebase/firestore";
 import db from './Components/Firebase'
 import "./Components/Home.css"
 import "./App.css"
@@ -55,8 +56,8 @@ function App() {
                           <td>{bUser.email}</td>
                           <td>{bUser.phone}</td>
                           <td>Rs.{bUser.total}</td>
-                        <td><Link to='/profilePage' ><button onClick={() => {
-                            setCustName({ name: bUser.name, email: bUser.email, phone: bUser.phone,total:bUser.total,key:bUser.key,photoID:bUser.photoId })
+                          <td><Link to='/profilePage' ><button onClick={() => {
+                            setCustName({ name: bUser.name, email: bUser.email, phone: bUser.phone, total: bUser.total, key: bUser.key, photoID: bUser.photoId })
                           }}>Select</button></Link></td>
                         </tr>
                       </>
@@ -64,9 +65,15 @@ function App() {
                   }
                 </tbody>
               </table>
+
+              <div className="transaction_button">
+                <Link to='/transactionPage' ><button>Transaction History</button></Link>
+              </div>
+              
             </div>
           } />
           <Route path="/profilePage" element={<ProfilePage pDetails={custName} />} />
+          <Route path="/transactionPage" element={<TransactionPage />} />
         </Routes>
       </Router>
     </>

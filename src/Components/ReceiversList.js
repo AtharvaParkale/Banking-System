@@ -85,6 +85,7 @@ function ReceiversList(props) {
                 senderKey={props.senderKey}
                 senderAmt={props.senderAmt}
                 rDetails={receiverDetails}
+                sDetails={props.sDetails}
             >
 
             </SendMoney>
